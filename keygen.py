@@ -3,7 +3,10 @@ import random
 
 #variables
 dummy = ""
+dkey = 0
 key = 0
+ans = 0
+keyFile = open('keyFile.txt', 'w')
 keyBase = [
     'a',
     'b',
@@ -90,6 +93,7 @@ keyBase = [
     '<',
     '>',
     '?',
+    ' '
 ]
 
 #shuffling base
@@ -97,4 +101,17 @@ random.shuffle(keyBase)
 
 #turning key into a string for easier input
 key = (dummy.join(keyBase))
+
+#input your own key
+ans = input('do you have a key already?(y/n) >')
+if ans == 'y':
+ dkey = input('key >')
+ if dkey.__len__() != keyBase.__len__():
+  print('using generated key:inputted key has too many or too few characters')
+ else:
+     key = dkey
+
+#add to file
+keyFile.write(key)
+
 print(key)
