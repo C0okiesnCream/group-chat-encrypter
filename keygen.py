@@ -72,6 +72,7 @@ keyBase = [
     '[',
     ']',
     ';',
+    #the double backslash below this is because it gives an error with just one as you are cancelling the quotation mark
     '\\',
     ',',
     '.',
