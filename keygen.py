@@ -1,12 +1,16 @@
+#UPPERCASE = constant
+#camelCase = var
+#PascalCase = object
+#lower_snake_case = file names
 #imports
 import random
 
 #variables
-dummy = ""
-dkey = 0
+DUMMY = ""
+dKey = 0
 key = 0
 ans = 0
-keyFile = open('keyFile.txt', 'w')
+key_file = open('key_file.txt', 'w')
 keyBase = [
     'a',
     'b',
@@ -100,18 +104,19 @@ keyBase = [
 random.shuffle(keyBase)
 
 #turning key into a string for easier input
-key = (dummy.join(keyBase))
+key = (DUMMY.join(keyBase))
 
 #input your own key
 ans = input('do you have a key already?(y/n) >')
 if ans == 'y':
- dkey = input('key >')
- if dkey.__len__() != keyBase.__len__():
+ dKey = input('key >')
+ if dKey.__len__() != keyBase.__len__():
   print('using generated key:inputted key has too many or too few characters')
  else:
-     key = dkey
+     key = dKey
 
 #add to file
-keyFile.write(key)
+key_file.write(key)
+key_file.close()
 
 print(key)
